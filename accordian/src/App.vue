@@ -23,7 +23,6 @@ import FaqCardVue from "./components/FaqCard.vue";
   background: url(./assets/images/background-pattern-desktop.svg);
   width: 100%;
   height: 35%;
-  background-repeat: no-repeat;
   background-size: auto;
 }
 .card {

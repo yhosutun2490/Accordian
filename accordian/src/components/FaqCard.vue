@@ -2,17 +2,17 @@
   <div class="card-container">
     <div class="title-wrap">
       <img class="title-img" :src="StarIcon" alt="star-icon"/>
-      <p class="title-word">FAQ</p>
+      <p class="title-word">FAQs</p>
     </div>
     <div class="card-row-wrap">
       <div class="card-row" v-for="data in cardRowData" :key="data.id">
         <div class="row-title-wrap">
-          <div>{{ data.title }}</div>
-          <button class="open-btn" v-if="data.isShowCard" @click.stop ="toggleCard(data.id)"></button>
-          <button class="close-btn" v-if="!data.isShowCard" @click.stop="toggleCard(data.id)"></button>
+          <div class="row-title-word">{{ data.title }}</div>
+          <button class="open-btn" v-if="!data.isShowCard" @click.stop ="toggleCard(data.id)"></button>
+          <button class="close-btn" v-if="data.isShowCard" @click.stop="toggleCard(data.id)"></button>
         </div>
         <div class="card-content" v-show="data.isShowCard">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fugit cupiditate unde veniam minus sequi, vitae aperiam quibusdam provident similique eligendi consequatur, impedit deleniti modi adipisci necessitatibus quos dolores. Nam!</p>
+          <p>{{ data.content }}</p>
         </div>
       </div>
     </div>
@@ -27,20 +27,26 @@ const cardRowData = ref([
   {
     id: 1,
     title: 'What is Frontend Mentor, and how will it help me?',
-    content: 'hello',
+    content: 'Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It’s suitable for all levels and ideal for portfolio building.',
     isShowCard: false,
   },
    {
     id: 2,
-    title: 'What is Frontend Mentor, and how will it help me?',
-    content: 'hello',
+    title: 'Is Frontend Mentor free?',
+    content: 'Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It’s suitable for all levels and ideal for portfolio building.',
      isShowCard: false,
   },
    {
     id: 3,
-    title: 'What is Frontend Mentor, and how will it help me?',
-    content: 'hello',
+    title: 'Can I use Frontend Mentor projects in my portfolio?',
+    content: 'Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It’s suitable for all levels and ideal for portfolio building.',
      isShowCard: false,
+  },
+   {
+    id: 4,
+    title: "How can I get help if I'm stuck on a challenge?",
+    content: 'Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It’s suitable for all levels and ideal for portfolio building.',
+    isShowCard: false,
   },
 ])
 
@@ -68,30 +74,43 @@ function toggleCard (id) {
     margin-right: 24px;
   }
   .title-word {
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: 700;
     font-size: 56px;
-    line-height: 66px;
-    color: #301534;
+    font-weight: 700;
   }
 }
 .card-row:not(:last-child) { 
     border-bottom: 1px solid #F8EEFF;
   } 
+.card-content {
+  color: #8B6990;
+  text-align: start;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;  
+}
 .row-title-wrap {
   width: 100%;
   display: flex;
   align-items: center;
   height: 30px;
   padding: 24px 0;
-  
+  .row-title-word {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    &:hover {
+      color: #AD28EB;
+      cursor: pointer;
+    }
+  }
   
   .open-btn,.close-btn {
     all: unset;
     margin-left: auto;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
   }
   .open-btn {
