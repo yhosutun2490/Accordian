@@ -11,9 +11,11 @@
           <button class="open-btn" v-if="!data.isShowCard" @click.stop ="toggleCard(data.id)"></button>
           <button class="close-btn" v-if="data.isShowCard" @click.stop="toggleCard(data.id)"></button>
         </div>
-        <div class="card-content" v-show="data.isShowCard">
-          <p>{{ data.content }}</p>
-        </div>
+        <Transition name="fade">
+          <div class="card-content" v-show="data.isShowCard">
+            <p>{{ data.content }}</p>
+          </div>
+        </Transition>
       </div>
     </div>
 
@@ -51,10 +53,11 @@ const cardRowData = ref([
 ])
 
 function toggleCard (id) {
+  // show only one card in one time
   cardRowData.value = cardRowData.value.map(item=>{
     if (item.id === id ) {
       item.isShowCard =  !item.isShowCard
-    }  return item
+    } return item
   })
 }
 </script>
@@ -145,5 +148,27 @@ function toggleCard (id) {
     height: auto;
   }
 }
+
+.fade-enter-active {
+  transition: all 0.2s linear;
+  overflow: hidden;
+}
+.fade-leave-active {
+  transition: height 0.1s ease-out 0.2s;
+  overflow: hidden;
+}
+
+.fade-enter-from,.fade-leave-to {
+  height: 0;
+  width: 85%;
+  transform-origin: top;
+}
+.fade-enter-to,.fade-leave-from {
+  height: 50px;
+  width: 85%;
+  transform-origin: top;
+}
+
+
 
 </style>
