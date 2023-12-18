@@ -63,6 +63,12 @@ function toggleCard (id) {
   width: 41.66%;
   background-color: white;
   border-radius: 16px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  min-height: 335px;  
 }
 .title-wrap {
   display: flex;
@@ -76,6 +82,7 @@ function toggleCard (id) {
   .title-word {
     font-size: 56px;
     font-weight: 700;
+    text-align: start;
   }
 }
 .card-row:not(:last-child) { 
@@ -100,6 +107,8 @@ function toggleCard (id) {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    width: 85% ;
+    text-align: start;
     &:hover {
       color: #AD28EB;
       cursor: pointer;
@@ -115,13 +124,25 @@ function toggleCard (id) {
   }
   .open-btn {
     background-image: url(../assets/images/icon-plus.svg);
-    background-position: center;
-    background-size: contain;
   }
   .close-btn {
     background-image: url(../assets/images/icon-minus.svg);
-    background-position: center;
-    background-size: contain;
+  }
+}
+@media screen and (max-width: 576px) {
+  .card-container {
+    width: 75%;
+    max-width: 100dvw;
+    height: 65%;
+  }
+}
+@media screen and (max-width: 376px) {
+  .card-container {
+    max-width: 87.2%;
+    top: 17.2%;
+    left: 50%;
+    transform: translate(-50%,0%);
+    height: auto;
   }
 }
 

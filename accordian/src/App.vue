@@ -1,7 +1,7 @@
 <template>
 <container class="container">
   <header class="header"></header>
-  <FaqCardVue class="card"/>
+  <FaqCardVue/>
 </container>
 </template>
 
@@ -25,11 +25,6 @@ import FaqCardVue from "./components/FaqCard.vue";
   height: 35%;
   background-size: auto;
 }
-.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  min-height: 335px;
-}
+
+
 </style>
