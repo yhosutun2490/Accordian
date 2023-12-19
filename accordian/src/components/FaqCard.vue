@@ -57,7 +57,10 @@ function toggleCard (id) {
   cardRowData.value = cardRowData.value.map(item=>{
     if (item.id === id ) {
       item.isShowCard =  !item.isShowCard
-    } return item
+    } else {
+      item.isShowCard = false
+    }
+    return item
   })
 }
 </script>
@@ -112,6 +115,7 @@ function toggleCard (id) {
     line-height: normal;
     width: 85% ;
     text-align: start;
+    color: black;
     &:hover {
       color: #AD28EB;
       cursor: pointer;
