@@ -1,14 +1,14 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" tabindex="0">
     <div class="title-wrap">
       <img class="title-img" :src="StarIcon" alt="star-icon"/>
       <p class="title-word">FAQs</p>
     </div>
     <div class="card-row-wrap">
       <div class="card-row" v-for="data in cardRowData" :key="data.id">
-        <div class="row-title-wrap">
+        <div class="row-title-wrap" tabindex="3" @keydown.space="toggleCard(data.id)">
           <div class="row-title-word">{{ data.title }}</div>
-          <button class="open-btn" v-if="!data.isShowCard" @click.stop ="toggleCard(data.id)"></button>
+          <button class="open-btn" v-if="!data.isShowCard" @click.stop ="toggleCard(data.id)" ></button>
           <button class="close-btn" v-if="data.isShowCard" @click.stop="toggleCard(data.id)"></button>
         </div>
         <Transition name="fade">
@@ -62,6 +62,10 @@ function toggleCard (id) {
     }
     return item
   })
+}
+function focusCardContainer(event) {
+  alert("keycode",event.key)
+
 }
 </script>
 <style scoped lang="scss">
