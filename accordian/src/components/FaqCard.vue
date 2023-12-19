@@ -89,6 +89,7 @@ function toggleCard (id) {
     font-size: 56px;
     font-weight: 700;
     text-align: start;
+    color: black;
   }
 }
 .card-row:not(:last-child) { 
@@ -154,11 +155,11 @@ function toggleCard (id) {
 }
 
 .fade-enter-active {
-  transition: all 0.2s linear;
+  transition: all 0.2s linear 0.2s;
   overflow: hidden;
 }
 .fade-leave-active {
-  transition: height 0.1s ease-out 0.2s;
+  transition: height 0.1s ease-out;
   overflow: hidden;
 }
 
