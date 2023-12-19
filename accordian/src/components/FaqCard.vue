@@ -92,8 +92,11 @@ function focusCardContainer(event) {
   .title-word {
     font-size: 56px;
     font-weight: 700;
+    font-style: normal; 
     text-align: start;
     color: black;
+    font-family: 'Work Sans';
+    line-height: normal; 
   }
 }
 .card-row:not(:last-child) { 
@@ -117,7 +120,7 @@ function focusCardContainer(event) {
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: normal; 
     width: 85% ;
     text-align: start;
     color: black;
