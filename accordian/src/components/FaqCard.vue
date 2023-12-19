@@ -95,7 +95,7 @@ function focusCardContainer(event) {
     font-style: normal; 
     text-align: start;
     color: black;
-    font-family: 'Work Sans';
+    font-family: 'Work Sans', sans-serif;
     line-height: normal; 
   }
 }
